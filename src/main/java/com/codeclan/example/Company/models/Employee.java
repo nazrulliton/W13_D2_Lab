@@ -45,9 +45,23 @@ public class Employee {
     )
     private List<Project> projects;
 
+    public Department getDepartment() {
+        return department;
+    }
 
+    public void setDepartment(Department department) {
+        this.department = department;
+    }
 
-    public Employee( String firstName, String lastName, int employeeNumber) {
+    public List<Project> getProjects() {
+        return projects;
+    }
+
+    public void setProjects(List<Project> projects) {
+        this.projects = projects;
+    }
+
+    public Employee(String firstName, String lastName, int employeeNumber) {
 
         this.firstName = firstName;
         this.lastName = lastName;

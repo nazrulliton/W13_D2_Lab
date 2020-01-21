@@ -37,8 +37,24 @@ class CompanyApplicationTests {
 		Project project1 = new Project("Kanban Training", 4);
 		projectRepository.save(project);
 		projectRepository.save(project1);
-		Department department = new Department("Developer");
+		Department department = new Department("Change");
 	}
+	@Test
+	public void addEmployeesAndDepartmentsAndProjects(){
+		Department department = new Department("Change");
+		departmentRepository.save(department);
+
+		Employee employee1 = new Employee("Nelson", "Catrin", 999);
+		employeeRepository.save(employee1);
+
+		Project project1 = new Project("CRM Update", 4);
+		projectRepository.save(project1);
+
+		project1.addEmployee(employee1);
+		projectRepository.save(project1);
+	}
+
+
 
 
 }

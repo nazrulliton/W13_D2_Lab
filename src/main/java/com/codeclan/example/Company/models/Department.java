@@ -29,19 +29,27 @@ public class Department {
 
     }
 
-    public Long getId() {
-        return deptId;
-    }
-
-    public void setId(Long id) {
-        this.deptId = id;
-    }
-
     public String getDeptName() {
         return deptName;
     }
 
     public void setDeptName(String deptName) {
         this.deptName = deptName;
+    }
+
+    public Long getDeptId() {
+        return deptId;
+    }
+
+    public void setDeptId(Long deptId) {
+        this.deptId = deptId;
+    }
+
+    public List<Employee> getEmployees() {
+        return employees;
+    }
+
+    public void setEmployees(List<Employee> employees) {
+        this.employees = employees;
     }
 }

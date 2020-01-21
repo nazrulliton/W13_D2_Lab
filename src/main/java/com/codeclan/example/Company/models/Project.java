@@ -75,4 +75,16 @@ public class Project {
     public void setDuration(int duration) {
         this.duration = duration;
     }
+
+    public void addEmployee(Employee employee){
+        this.employees.add(employee);
+    }
+
+    public List<Employee> getEmployees() {
+        return employees;
+    }
+
+    public void setEmployees(List<Employee> employees) {
+        this.employees = employees;
+    }
 }
