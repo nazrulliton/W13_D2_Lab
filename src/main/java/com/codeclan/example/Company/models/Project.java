@@ -1,7 +1,10 @@
 package com.codeclan.example.Company.models;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "projects")
@@ -14,6 +17,29 @@ public class Project {
     private String projectName;
     @Column (name = "duration")
     private int duration;
+    @JsonIgnoreProperties(value = "projects")
+    @ManyToMany
+    @JoinTable(
+            name = "employees_projects",
+
+            joinColumns = {
+                    @JoinColumn(
+                    name = "project_id",
+            nullable = false,
+            updatable = false
+                    )
+            },
+            inverseJoinColumns = {
+                    @JoinColumn(
+                            name = "employee_id",
+                            nullable = false,
+                            updatable = false
+                    )
+            }
+    )
+    private List<Employee> employees;
+
+
 
 
     public Project(Long id, String projectName, int duration) {

@@ -1,7 +1,10 @@
 package com.codeclan.example.Company.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.*;
 import java.util.ArrayList;
+import java.util.List;
 
 
 @Entity
@@ -10,23 +13,26 @@ public class Department {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long deptId;
+
     @Column(name = "dept_name")
     private String deptName;
-    @Column(name = "employees")
-    private ArrayList<Employee> employees;
+
+    @JsonIgnoreProperties("departments")
+    @ManyToOne
+    private List<Employee> employees;
 
     public Department(Long id, String deptName) {
-        this.id = id;
+        this.deptId = id;
         this.deptName = deptName;
     }
 
     public Long getId() {
-        return id;
+        return deptId;
     }
 
     public void setId(Long id) {
-        this.id = id;
+        this.deptId = id;
     }
 
     public String getDeptName() {
