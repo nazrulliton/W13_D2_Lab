@@ -15,6 +15,8 @@ public class Employee {
     private String lastName;
     @Column(name = "employee_number")
     private Long employeeNumber;
+    @Column(name = "department")
+    private Department department;
 
 
     public Employee(Long id, String firstName, String lastName, Long employeeNumber) {

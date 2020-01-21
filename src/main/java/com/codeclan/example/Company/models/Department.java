@@ -1,6 +1,7 @@
 package com.codeclan.example.Company.models;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 
 
 @Entity
@@ -12,6 +13,8 @@ public class Department {
     private Long id;
     @Column(name = "dept_name")
     private String deptName;
+    @Column(name = "employees")
+    private ArrayList<Employee> employees;
 
     public Department(Long id, String deptName) {
         this.id = id;
