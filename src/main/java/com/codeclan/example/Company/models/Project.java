@@ -42,10 +42,14 @@ public class Project {
 
 
 
-    public Project(Long id, String projectName, int duration) {
-        this.id = id;
+    public Project(String projectName, int duration) {
+
         this.projectName = projectName;
         this.duration = duration;
+    }
+
+    public Project(){
+
     }
 
     public Long getId() {

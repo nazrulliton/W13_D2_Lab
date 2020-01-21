@@ -22,9 +22,11 @@ public class Department {
     @ManyToOne
     private List<Employee> employees;
 
-    public Department(Long id, String deptName) {
-        this.deptId = id;
+    public Department( String deptName) {
         this.deptName = deptName;
+    }
+    public Department(){
+
     }
 
     public Long getId() {

@@ -17,7 +17,7 @@ public class Employee {
     @Column(name="last_name")
     private String lastName;
     @Column(name = "employee_number")
-    private Long employeeNumber;
+    private int employeeNumber;
 
     @JsonIgnoreProperties("employees")
     @OneToMany(mappedBy = "employee")
@@ -45,11 +45,17 @@ public class Employee {
     )
     private List<Project> projects;
 
-    public Employee(Long id, String firstName, String lastName, Long employeeNumber) {
-        this.id = id;
+
+
+    public Employee( String firstName, String lastName, int employeeNumber) {
+
         this.firstName = firstName;
         this.lastName = lastName;
         this.employeeNumber = employeeNumber;
+    }
+
+    public Employee(){
+
     }
 
     public Long getId() {
@@ -76,11 +82,11 @@ public class Employee {
         this.lastName = lastName;
     }
 
-    public Long getEmployeeNumber() {
+    public int getEmployeeNumber() {
         return employeeNumber;
     }
 
-    public void setEmployeeNumber(Long employeeNumber) {
+    public void setEmployeeNumber(int employeeNumber) {
         this.employeeNumber = employeeNumber;
     }
 }

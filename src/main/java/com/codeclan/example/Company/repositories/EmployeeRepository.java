@@ -1,4 +1,10 @@
 package com.codeclan.example.Company.repositories;
 
-public class EmployeeRepository {
+
+import com.codeclan.example.Company.models.Employee;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface EmployeeRepository extends JpaRepository<Employee, Long> {
 }
